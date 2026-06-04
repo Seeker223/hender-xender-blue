@@ -42,9 +42,9 @@ body {
 
 .screen3 {
     flex: 1;
-    min-width: 300px;
-    border-left: 1px solid #d5dde7;
-    background: #f8fbff;
+    background-color: red;
+    background-color: none;
+    background: none;
 }
 
 .navigation {
@@ -64,10 +64,9 @@ body {
 }
 
 .logo img {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    object-fit: cover;
+    border-radius: none;
+    width: 40px;
+    height: 40px;
 }
 
 .navLinks ul {
@@ -116,15 +115,17 @@ body {
     margin-bottom: 14px;
 }
 
-.avatar img,
 .avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.avatar img {
     width: 42px;
     height: 42px;
     border-radius: 50%;
     object-fit: cover;
-}
-
-.avatar img {
     border: 2px solid #c9ddf6;
 }
 
@@ -143,55 +144,33 @@ body {
 
 .circle {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px;
-    border-bottom: 1px solid #d5dde7;
 }
 
 .avatars {
-    display: flex;
-    gap: 8px;
-    overflow: hidden;
-}
-
-.circle .avatars {
-    flex: 1;
+    margin-left: 11px;
+    border: 2px solid blue;
+    border: none;
 }
 
 .container2 {
     display: flex;
-    height: calc(100vh - 85px);
+    height: 100vh;
+}
+
+.container2 .avatars {
+    margin-left: 0px;
+    width: 40px;
 }
 
 .vid-container {
-    display: grid;
-    flex: 1;
-    gap: 16px;
-    overflow-y: auto;
-    padding: 18px;
+    border: 2px solid green;
+    overflow-y: scroll;
 }
 
 .vid {
-    overflow: hidden;
-    border: 1px solid #dce4ee;
-    border-radius: 8px;
-    background: #101820;
-    aspect-ratio: 9 / 14;
 }
 
 video {
-    display: block;
-    width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.container2 > .avatars {
-    width: 58px;
-    flex-direction: column;
-    align-items: center;
-    padding: 18px 8px;
-    border-left: 1px solid #d5dde7;
-    overflow-y: auto;
 }
