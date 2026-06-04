@@ -117,7 +117,7 @@ body {
 .post {
     display: block;
     height: max-content;
-    padding: 18px;
+    padding: 20px;
     border: 1px solid #dce4ee;
     border-radius: 8px;
     background: #ffffff;
@@ -133,7 +133,6 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
 }
 
 .avatars img {
@@ -148,6 +147,89 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #c9ddf6;
+}
+
+.thread-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    position: relative;
+}
+
+.thread-rail {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.thread-rail::after {
+    content: "";
+    position: absolute;
+    top: 54px;
+    bottom: -22px;
+    width: 2px;
+    border-radius: 999px;
+    background: #dce4ee;
+}
+
+.thread-item:last-child .thread-rail::after {
+    display: none;
+}
+
+.thread-rail img {
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px #bdd5f2;
+}
+
+.thread-root .thread-rail img {
+    box-shadow: 0 0 0 2px #0c4a8a, 0 10px 22px rgba(12, 74, 138, 0.18);
+}
+
+.thread-body {
+    min-width: 0;
+}
+
+.thread-replies {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.reply-body {
+    padding: 12px 14px;
+    border: 1px solid #edf2f7;
+    border-radius: 8px;
+    background: #fbfdff;
+}
+
+.reply-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.reply-meta strong {
+    color: #17202a;
+    font-size: 14px;
+}
+
+.reply-meta span {
+    color: #8a98a8;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.reply-body p {
+    color: #52616f;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .post-info h3 {
@@ -253,46 +335,6 @@ body {
     color: #697887;
     font-size: 13px;
     font-weight: 700;
-}
-
-.post-comments {
-    display: grid;
-    gap: 10px;
-}
-
-.comment-summary {
-    color: #0c4a8a;
-    font-size: 13px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.comment {
-    display: flex;
-    gap: 10px;
-    padding: 12px;
-    border: 1px solid #edf2f7;
-    border-radius: 8px;
-    background: #fbfdff;
-}
-
-.comment img {
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.comment p {
-    color: #52616f;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-.comment strong {
-    margin-right: 4px;
-    color: #17202a;
 }
 
 .circle {
