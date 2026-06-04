@@ -195,43 +195,6 @@ body {
     height: 320px;
 }
 
-.package-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.package-grid div,
-.package-list {
-    border: 1px solid #dce4ee;
-    border-radius: 8px;
-    background: #f8fbff;
-}
-
-.package-grid div {
-    padding: 14px;
-}
-
-.package-grid span {
-    display: block;
-    margin-bottom: 6px;
-    color: #697887;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.package-grid strong {
-    color: #17202a;
-    font-size: 15px;
-}
-
-.package-list {
-    display: grid;
-    gap: 8px;
-    padding: 14px;
-}
-
 .post-actions {
     display: flex;
     align-items: center;
