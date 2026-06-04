@@ -267,6 +267,28 @@ body {
     line-height: 1.2;
 }
 
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.post-tags a {
+    padding: 7px 10px;
+    border: 1px solid #dce4ee;
+    border-radius: 999px;
+    background: #fbfdff;
+    color: #0c4a8a;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.post-tags a:hover {
+    border-color: #0c4a8a;
+    background: #e7f1ff;
+}
+
 .post-media {
     overflow: hidden;
     border: 1px solid #dce4ee;
