@@ -130,7 +130,11 @@
                                     <a href="#">#BlueVisuals</a>
                                 </div>
                                 <div class="post-media video-media">
-                                    <video src="assets/get started.mp4" controls muted></video>
+                                    <video src="assets/get started.mp4" muted preload="metadata"></video>
+                                    <button class="brand-play" type="button" aria-label="Play video">
+                                        <span class="brand-mark">HX</span>
+                                        <span class="play-shape"></span>
+                                    </button>
                                 </div>
                                 <div class="post-actions">
                                     <button type="button" aria-label="Like"><svg><use href="#icon-heart"></use></svg></button>
@@ -179,17 +183,31 @@
                 <img src="assets\945404146813519747.jfif" alt="">
                 <img src="assets\945404146813519747.jfif" alt="">
                 <img src="assets\945404146813519747.jfif" alt="">
-                <img src="assets\945404146813519747.jfif" alt="">
-                <img src="assets\945404146813519747.jfif" alt="">
             </div>
             </div>
             <div class="container2">
                 <div class="vid-container">
                 <div class="vid">                
-                    <video src="assets\get started.mp4" controls muted preload="metadata"></video>
+                    <video src="assets\get started.mp4" muted preload="metadata"></video>
+                    <button class="brand-play" type="button" aria-label="Play video">
+                        <span class="brand-mark">HX</span>
+                        <span class="play-shape"></span>
+                    </button>
+                    <div class="story-reply">
+                        <button class="story-message" type="button" aria-label="Message"></button>
+                        <button class="story-love" type="button" aria-label="Love"></button>
+                    </div>
                 </div>
                 <div class="vid">                
-                    <video src="assets\get started.mp4" controls muted preload="metadata"></video>
+                    <video src="assets\get started.mp4" muted preload="metadata"></video>
+                    <button class="brand-play" type="button" aria-label="Play video">
+                        <span class="brand-mark">HX</span>
+                        <span class="play-shape"></span>
+                    </button>
+                    <div class="story-reply">
+                        <button class="story-message" type="button" aria-label="Message"></button>
+                        <button class="story-love" type="button" aria-label="Love"></button>
+                    </div>
                 </div>
                
 
@@ -212,6 +230,39 @@
             </div>
 
         </div>
-    
+        <script>
+            document.querySelectorAll(".post-media.video-media, .vid").forEach((videoShell) => {
+                const video = videoShell.querySelector("video");
+                const playButton = videoShell.querySelector(".brand-play");
+
+                if (!video || !playButton) {
+                    return;
+                }
+
+                function syncVideoState() {
+                    videoShell.classList.toggle("is-playing", !video.paused);
+                    playButton.setAttribute("aria-label", video.paused ? "Play video" : "Pause video");
+                }
+
+                function toggleVideo() {
+                    if (video.paused) {
+                        const playback = video.play();
+
+                        if (playback) {
+                            playback.catch(syncVideoState);
+                        }
+                    } else {
+                        video.pause();
+                    }
+                }
+
+                playButton.addEventListener("click", toggleVideo);
+                video.addEventListener("click", toggleVideo);
+                video.addEventListener("play", syncVideoState);
+                video.addEventListener("pause", syncVideoState);
+                video.addEventListener("ended", syncVideoState);
+                syncVideoState();
+            });
+        </script>
 </body>
 </html>

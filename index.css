@@ -290,6 +290,7 @@ body {
 }
 
 .post-media {
+    position: relative;
     overflow: hidden;
     border: 1px solid #dce4ee;
     border-radius: 8px;
@@ -378,16 +379,132 @@ body {
     margin-left: 0px;
     width: 40px;
 }
-
+.screen3{
+    width: 100%;
+    padding: ;
+}
 .vid-container {
     border: 2px solid green;
     overflow-y: scroll;
 }
 
 .vid {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 3px;
+    border: 2px solid orange;
+}
+
+.vid video {
+    width: 100%;
+    height: 100%;
 }
 
 video {
     height: 100%;
     object-fit: cover;
+}
+
+.brand-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 999px;
+    background: rgba(12, 74, 138, 0.78);
+    color: #ffffff;
+    box-shadow: 0 16px 34px rgba(12, 74, 138, 0.28);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    backdrop-filter: blur(14px);
+}
+
+.brand-play:hover {
+    background: rgba(12, 74, 138, 0.92);
+    transform: translate(-50%, -50%) scale(1.04);
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0c4a8a;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.play-shape {
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 14px solid #ffffff;
+}
+
+.is-playing .brand-play {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.94);
+}
+
+.story-reply {
+    position: absolute;
+    right: 16px;
+    bottom: 18px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.story-message {
+    height: 36px;
+    flex: 1;
+    border: 3px solid #ffffff;
+    border-radius: 999px;
+    background: transparent;
+}
+
+.story-love {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    background: transparent;
+}
+
+.story-love::before,
+.story-love::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    width: 18px;
+    height: 26px;
+    border: 3px solid #ffffff;
+    border-bottom: 0;
+    border-radius: 18px 18px 0 0;
+    background: transparent;
+}
+
+.story-love::before {
+    left: 8px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.story-love::after {
+    right: 8px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
 }
