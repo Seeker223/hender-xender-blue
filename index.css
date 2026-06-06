@@ -386,6 +386,12 @@ body {
     flex-direction: column;
     gap: 8px;
     overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container2 .avatars::-webkit-scrollbar {
+    display: none;
 }
 
 .avatar-status {
@@ -440,6 +446,12 @@ body {
     border: 2px solid green;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.vid-container::-webkit-scrollbar {
+    display: none;
 }
 
 .vid {
