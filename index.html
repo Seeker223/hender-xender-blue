@@ -48,6 +48,10 @@
                         <li><a href="#"><svg><use href="#icon-settings"></use></svg> Settings</a></li>
                     </ul>
                 </div>
+                <div class="rail-toggle" aria-label="Screen3 rail mode">
+                    <button class="active" type="button" data-rail-mode="avatars" aria-pressed="true">Avatars</button>
+                    <button type="button" data-rail-mode="ranking" aria-pressed="false">Stars</button>
+                </div>
             </div>
         </div>
         <div class="screen2">
@@ -281,7 +285,24 @@
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
-            </div>
+                </div>
+                <div class="ranking-rail" aria-label="Star ranking">
+                    <div class="rank-level rank-novice"><span class="rank-star"></span><span>Novice</span></div>
+                    <div class="rank-level rank-amateur"><span class="rank-star"></span><span>Amateur</span></div>
+                    <div class="rank-level rank-senior"><span class="rank-star"></span><span>Senior</span></div>
+                    <div class="rank-level rank-enthusiast"><span class="rank-star"></span><span>Enthusiast</span></div>
+                    <div class="rank-level rank-professional"><span class="rank-star"></span><span>Professional</span></div>
+                    <div class="rank-level rank-expert"><span class="rank-star"></span><span>Expert</span></div>
+                    <div class="rank-level rank-leader"><span class="rank-star"></span><span>Leader</span></div>
+                    <div class="rank-level rank-veteran"><span class="rank-star"></span><span>Veteran</span></div>
+                    <div class="rank-level rank-master"><span class="rank-star"></span><span>Master</span></div>
+                    <div class="rank-level rank-ultimate"><span class="rank-star"></span><span>Ultimate</span></div>
+                    <div class="rank-level rank-sapphire"><span class="rank-star"></span><span>Sapphire</span></div>
+                    <div class="rank-level rank-emerald"><span class="rank-star"></span><span>Emerald</span></div>
+                    <div class="rank-level rank-ruby"><span class="rank-star"></span><span>Ruby</span></div>
+                    <div class="rank-level rank-diamond"><span class="rank-star"></span><span>Diamond</span></div>
+                    <div class="rank-level rank-black-diamond"><span class="rank-star"></span><span>Black diamond</span></div>
+                </div>
             </div>
 
         </div>
@@ -317,6 +338,23 @@
                 video.addEventListener("pause", syncVideoState);
                 video.addEventListener("ended", syncVideoState);
                 syncVideoState();
+            });
+
+            const screen3 = document.querySelector(".screen3");
+            const railToggleButtons = document.querySelectorAll(".rail-toggle button");
+
+            railToggleButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const showRanking = button.dataset.railMode === "ranking";
+
+                    screen3.classList.toggle("show-ranking", showRanking);
+
+                    railToggleButtons.forEach((toggleButton) => {
+                        const isActive = toggleButton === button;
+                        toggleButton.classList.toggle("active", isActive);
+                        toggleButton.setAttribute("aria-pressed", String(isActive));
+                    });
+                });
             });
         </script>
 </body>
