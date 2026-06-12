@@ -43,13 +43,41 @@
                 <div class="navLinks">
                     <ul>
                         <li><a href="#"><svg><use href="#icon-home"></use></svg> Home</a></li>
-                        <li><a href="#"><svg><use href="#icon-profile"></use></svg> Profile</a></li>
-                        <li><a href="#"><svg><use href="#icon-message"></use></svg> Messages</a></li>
-                        <li><a href="#"><svg><use href="#icon-settings"></use></svg> Settings</a></li>
+                        <li>
+                            <details open>
+                                <summary><svg><use href="#icon-profile"></use></svg> Social</summary>
+                                <ul>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Friends</a></li>
+                                    <li><a href="#">Groups</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary><svg><use href="#icon-message"></use></svg> Chats</summary>
+                                <ul>
+                                    <li><a href="#">Messages</a></li>
+                                    <li><a href="#">Rooms</a></li>
+                                    <li><a href="#">Requests</a></li>
+                                </ul>
+                            </details>
+                        </li>
+                        <li>
+                            <details>
+                                <summary><svg><use href="#icon-settings"></use></svg> Account</summary>
+                                <ul>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Privacy</a></li>
+                                    <li><a href="#">Star level</a></li>
+                                </ul>
+                            </details>
+                        </li>
                     </ul>
                 </div>
                 <div class="rail-toggle" aria-label="Screen3 rail mode">
                     <button class="active" type="button" data-rail-mode="avatars" aria-pressed="true">Avatars</button>
+                    <button type="button" data-rail-mode="icons" aria-pressed="false">Icons</button>
                     <button type="button" data-rail-mode="ranking" aria-pressed="false">Stars</button>
                 </div>
             </div>
@@ -197,6 +225,14 @@
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
             </div>
+                <div class="rank-icon-strip" aria-label="2go star icon preview">
+                    <span class="rank-star rank-novice" aria-label="Novice"></span>
+                    <span class="rank-star rank-senior" aria-label="Senior"></span>
+                    <span class="rank-star rank-professional" aria-label="Professional"></span>
+                    <span class="rank-star rank-leader" aria-label="Leader"></span>
+                    <span class="rank-star rank-sapphire" aria-label="Sapphire"></span>
+                    <span class="rank-star rank-black-diamond" aria-label="Black diamond"></span>
+                </div>
             </div>
             <div class="container2">
                 <div class="vid-container">
@@ -286,6 +322,23 @@
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
                 <span class="avatar-status"><img src="assets\945404146813519747.jfif" alt=""></span>
                 </div>
+                <div class="rank-icon-rail" aria-label="2go star icons">
+                    <span class="rank-star rank-novice" aria-label="Novice"></span>
+                    <span class="rank-star rank-amateur" aria-label="Amateur"></span>
+                    <span class="rank-star rank-senior" aria-label="Senior"></span>
+                    <span class="rank-star rank-enthusiast" aria-label="Enthusiast"></span>
+                    <span class="rank-star rank-professional" aria-label="Professional"></span>
+                    <span class="rank-star rank-expert" aria-label="Expert"></span>
+                    <span class="rank-star rank-leader" aria-label="Leader"></span>
+                    <span class="rank-star rank-veteran" aria-label="Veteran"></span>
+                    <span class="rank-star rank-master" aria-label="Master"></span>
+                    <span class="rank-star rank-ultimate" aria-label="Ultimate"></span>
+                    <span class="rank-star rank-sapphire" aria-label="Sapphire"></span>
+                    <span class="rank-star rank-emerald" aria-label="Emerald"></span>
+                    <span class="rank-star rank-ruby" aria-label="Ruby"></span>
+                    <span class="rank-star rank-diamond" aria-label="Diamond"></span>
+                    <span class="rank-star rank-black-diamond" aria-label="Black diamond"></span>
+                </div>
                 <div class="ranking-rail" aria-label="Star ranking">
                     <div class="rank-level rank-novice"><span class="rank-star"></span><span>Novice</span></div>
                     <div class="rank-level rank-amateur"><span class="rank-star"></span><span>Amateur</span></div>
@@ -346,8 +399,10 @@
             railToggleButtons.forEach((button) => {
                 button.addEventListener("click", () => {
                     const showRanking = button.dataset.railMode === "ranking";
+                    const showStarIcons = button.dataset.railMode === "icons";
 
                     screen3.classList.toggle("show-ranking", showRanking);
+                    screen3.classList.toggle("show-star-icons", showStarIcons);
 
                     railToggleButtons.forEach((toggleButton) => {
                         const isActive = toggleButton === button;
