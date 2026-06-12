@@ -50,12 +50,12 @@
                     </div>
                     <div class="navLinks">
                         <ul>
-                            <li><a href="#"><svg><use href="#icon-home"></use></svg> Home</a></li>
+                            <li><a href="#home" data-route-link="home"><svg><use href="#icon-home"></use></svg> Home</a></li>
                             <li>
                                 <details open>
                                     <summary><svg><use href="#icon-profile"></use></svg> Social</summary>
                                     <ul>
-                                        <li><a href="#"><span class="menu-icon profile-icon">◉</span> Profile</a></li>
+                                        <li><a href="#profile" data-route-link="profile"><span class="menu-icon profile-icon">◉</span> Profile</a></li>
                                         <li><a href="#"><span class="menu-icon friends-icon">✦</span> Friends</a></li>
                                         <li><a href="#"><span class="menu-icon groups-icon">◆</span> Groups</a></li>
                                     </ul>
@@ -92,6 +92,61 @@
             </div>
         </div>
         <div class="screen2">
+            <div class="profile-editor">
+                <div class="profile-topbar">
+                    <div>
+                        <span>Profiles</span>
+                        <h1>Profile Identity</h1>
+                    </div>
+                    <button type="button" aria-label="Close profile page">×</button>
+                </div>
+                <div class="profile-tabs">
+                    <button class="active" type="button">Main Profile</button>
+                    <button type="button">Per-server Profiles</button>
+                </div>
+                <section class="profile-shop-card">
+                    <div class="shop-avatar"><img src="assets/945404146813519747.jfif" alt=""></div>
+                    <div>
+                        <strong>Create your dream look</strong>
+                        <p>Check out the latest avatar decorations, profile effects, and nameplates.</p>
+                    </div>
+                    <button type="button">Go to Shop</button>
+                </section>
+                <form class="profile-form">
+                    <label>
+                        <span>Display Name</span>
+                        <input type="text" value="Hender Xender">
+                    </label>
+                    <label>
+                        <span>Pronouns</span>
+                        <input type="text" value="hender/xender">
+                    </label>
+                    <div class="profile-actions-row">
+                        <span>Avatar</span>
+                        <button type="button">Change Avatar</button>
+                        <button class="ghost" type="button">Remove Avatar</button>
+                    </div>
+                    <div class="profile-actions-row">
+                        <span>Avatar Decoration</span>
+                        <button type="button">Change Decoration</button>
+                    </div>
+                    <div class="profile-actions-row">
+                        <span>Nameplate</span>
+                        <button type="button">Change Nameplate</button>
+                    </div>
+                    <section class="profile-effect">
+                        <span>Profile Effect</span>
+                        <div class="effect-card">
+                            <p>Level up your look, only with Hender Blue</p>
+                            <button type="button">Try it out</button>
+                        </div>
+                    </section>
+                    <label>
+                        <span>Banner Color</span>
+                        <input type="text" value="#0c4a8a">
+                    </label>
+                </form>
+            </div>
             <div class="composer">
                 <img src="assets/945404146813519747.jfif" alt="">
                 <button class="composer-prompt" type="button">What's on your mind, Sambad?</button>
@@ -380,6 +435,22 @@
 
         </div>
         <div class="screen3">
+            <aside class="profile-preview-panel">
+                <div class="profile-preview-card">
+                    <div class="preview-banner"></div>
+                    <img class="preview-avatar" src="assets/945404146813519747.jfif" alt="">
+                    <div class="preview-status"><span></span> Testing New Features</div>
+                    <h2>HenderXender</h2>
+                    <p>hender/xender • Premium profile system</p>
+                    <div class="preview-divider"></div>
+                    <strong>Contact Me</strong>
+                    <button type="button">Example Button</button>
+                </div>
+                <div class="nameplate-preview">
+                    <span>Nameplate Preview</span>
+                    <div><img src="assets/945404146813519747.jfif" alt=""> HenderXender</div>
+                </div>
+            </aside>
             <div class="circle">
                 <div class="logo">
                 <img src="assets\images\hlogo2.png" alt="">
@@ -572,6 +643,28 @@
 
         </div>
         <script>
+            const routeLinks = document.querySelectorAll("[data-route-link]");
+
+            function getCurrentRoute() {
+                const route = window.location.hash.replace("#", "");
+                return route === "profile" ? "profile" : "home";
+            }
+
+            function syncRouteView() {
+                const currentRoute = getCurrentRoute();
+
+                document.body.classList.toggle("profile-page-active", currentRoute === "profile");
+
+                routeLinks.forEach((link) => {
+                    const isActive = link.dataset.routeLink === currentRoute;
+                    link.classList.toggle("active-channel", isActive);
+                    link.setAttribute("aria-current", isActive ? "page" : "false");
+                });
+            }
+
+            window.addEventListener("hashchange", syncRouteView);
+            syncRouteView();
+
             document.querySelectorAll(".post-media.video-media, .vid").forEach((videoShell) => {
                 const video = videoShell.querySelector("video");
                 const playButton = videoShell.querySelector(".brand-play");

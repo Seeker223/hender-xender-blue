@@ -67,6 +67,340 @@ body {
     background: none;
 }
 
+.profile-editor,
+.profile-preview-panel {
+    display: none;
+}
+
+.profile-page-active .screen2,
+.profile-page-active .screen3 {
+    background: #303139;
+    color: #f8fbff;
+}
+
+.profile-page-active .screen2 {
+    flex: 2.1;
+    min-width: 520px;
+    overflow-y: auto;
+    padding: 34px 26px;
+}
+
+.profile-page-active .screen3 {
+    display: grid;
+    flex: 1.15;
+    min-width: 310px;
+    align-content: start;
+    padding: 112px 28px 34px 0;
+}
+
+.profile-page-active .composer,
+.profile-page-active .post-container,
+.profile-page-active .screen3 > .circle,
+.profile-page-active .screen3 > .container2 {
+    display: none;
+}
+
+.profile-page-active .profile-editor {
+    display: block;
+    width: min(100%, 680px);
+    margin-left: auto;
+}
+
+.profile-topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.profile-topbar span {
+    color: #b8ddff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.profile-topbar h1 {
+    margin-top: 7px;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.04em;
+}
+
+.profile-topbar button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(184, 221, 255, 0.24);
+    border-radius: 50%;
+    background: rgba(12, 74, 138, 0.2);
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.profile-tabs {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.profile-tabs button {
+    padding: 0 0 8px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #b8c2ce;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.profile-tabs button.active {
+    border-color: #b8ddff;
+    color: #ffffff;
+}
+
+.profile-shop-card {
+    display: grid;
+    grid-template-columns: 54px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    padding: 16px;
+    border: 1px solid rgba(184, 221, 255, 0.22);
+    border-radius: 10px;
+    background:
+        radial-gradient(circle at 18% 25%, rgba(184, 221, 255, 0.42), transparent 22%),
+        radial-gradient(circle at 70% 10%, rgba(255, 79, 123, 0.28), transparent 24%),
+        linear-gradient(135deg, #0c4a8a, #6757ff);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.shop-avatar {
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.shop-avatar img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-shop-card strong {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.profile-shop-card p {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.profile-shop-card button,
+.profile-form button,
+.profile-preview-card button {
+    border: 0;
+    border-radius: 6px;
+    background: #5865f2;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.profile-shop-card button {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #17202a;
+}
+
+.profile-form {
+    display: grid;
+    gap: 20px;
+}
+
+.profile-form label,
+.profile-effect,
+.profile-actions-row {
+    display: grid;
+    gap: 8px;
+}
+
+.profile-form label span,
+.profile-effect > span,
+.profile-actions-row > span {
+    color: #dce4ee;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.profile-form input {
+    width: min(100%, 360px);
+    padding: 11px 12px;
+    border: 1px solid rgba(184, 221, 255, 0.14);
+    border-radius: 5px;
+    background: #25262d;
+    color: #f8fbff;
+    outline: 0;
+}
+
+.profile-actions-row {
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    width: min(100%, 360px);
+}
+
+.profile-actions-row button {
+    padding: 9px 12px;
+}
+
+.profile-actions-row .ghost {
+    background: transparent;
+    color: #dce4ee;
+}
+
+.effect-card {
+    display: flex;
+    width: min(100%, 520px);
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px;
+    border: 1px solid rgba(184, 221, 255, 0.18);
+    border-radius: 10px;
+    background:
+        linear-gradient(#25262d, #25262d) padding-box,
+        linear-gradient(90deg, #0c4a8a, #ff4f7b, #b8ddff) border-box;
+    box-shadow: 0 0 24px rgba(12, 74, 138, 0.22);
+}
+
+.effect-card p {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.effect-card button {
+    padding: 10px 14px;
+    background: #ffffff;
+    color: #17202a;
+}
+
+.profile-page-active .profile-preview-panel {
+    display: grid;
+    gap: 18px;
+}
+
+.profile-preview-card {
+    position: relative;
+    overflow: hidden;
+    padding: 112px 18px 18px;
+    border: 1px solid rgba(184, 221, 255, 0.18);
+    border-radius: 10px;
+    background: #23242b;
+    color: #ffffff;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.preview-banner {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 122px;
+    background:
+        radial-gradient(circle at 80% 25%, rgba(184, 221, 255, 0.48), transparent 22%),
+        linear-gradient(135deg, #0c4a8a, #6757ff);
+}
+
+.preview-avatar {
+    position: absolute;
+    top: 78px;
+    left: 18px;
+    width: 78px;
+    height: 78px;
+    border: 6px solid #23242b;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.preview-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 92px;
+    color: #b8ddff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.preview-status span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #45b66f;
+}
+
+.profile-preview-card h2 {
+    margin-top: 24px;
+    font-size: 22px;
+}
+
+.profile-preview-card p {
+    margin-top: 5px;
+    color: #b8c2ce;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.preview-divider {
+    height: 1px;
+    margin: 16px 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-preview-card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.profile-preview-card button {
+    width: 100%;
+    padding: 11px;
+}
+
+.nameplate-preview {
+    display: grid;
+    gap: 8px;
+    color: #dce4ee;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.nameplate-preview div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #3a3b44;
+}
+
+.nameplate-preview img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .navigation {
     display: grid;
     grid-template-columns: 64px minmax(0, 1fr);
