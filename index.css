@@ -90,8 +90,20 @@ body {
 
 .profile-page-active .profile-editor {
     display: block;
-    width: min(100%, 680px);
-    margin-left: auto;
+    width: min(100%, 900px);
+    margin: 0 auto;
+}
+
+.profile-main {
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(240px, 300px);
+    gap: 28px;
+    align-items: start;
+}
+
+.profile-page-active .profile-main .profile-preview-panel {
+    display: grid;
+    gap: 12px;
 }
 
 .profile-topbar {
@@ -288,9 +300,9 @@ body {
     padding: 112px 18px 18px;
     border: 1px solid rgba(184, 221, 255, 0.18);
     border-radius: 10px;
-    background: #23242b;
+    background: #ffffff;
     color: #ffffff;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 24px 60px rgba(12, 74, 138, 0.16);
 }
 
 .preview-banner {
@@ -308,7 +320,7 @@ body {
     left: 18px;
     width: 78px;
     height: 78px;
-    border: 6px solid #23242b;
+    border: 6px solid #ffffff;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -332,12 +344,13 @@ body {
 
 .profile-preview-card h2 {
     margin-top: 24px;
+    color: #0b2540;
     font-size: 22px;
 }
 
 .profile-preview-card p {
     margin-top: 5px;
-    color: #b8c2ce;
+    color: #52616f;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -345,12 +358,13 @@ body {
 .preview-divider {
     height: 1px;
     margin: 16px 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: #dce4ee;
 }
 
 .profile-preview-card strong {
     display: block;
     margin-bottom: 10px;
+    color: #34495e;
     font-size: 12px;
     text-transform: uppercase;
 }
@@ -363,7 +377,7 @@ body {
 .nameplate-preview {
     display: grid;
     gap: 8px;
-    color: #dce4ee;
+    color: #34495e;
     font-size: 12px;
     font-weight: 800;
 }
@@ -374,7 +388,9 @@ body {
     gap: 9px;
     padding: 12px;
     border-radius: 6px;
-    background: #3a3b44;
+    border: 1px solid #dce4ee;
+    background: #ffffff;
+    color: #0b2540;
 }
 
 .nameplate-preview img {
@@ -1270,6 +1286,14 @@ body {
 }
 
 @media (max-width: 980px) {
+    .profile-main {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-page-active .profile-main .profile-preview-panel {
+        max-width: 320px;
+    }
+
     .masonry-media {
         grid-template-rows: repeat(4, 64px);
     }
