@@ -19,6 +19,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body.hx-dark-mode {
+    background: #07111b;
+    color: #eaf4ff;
+}
+
 .icon-sprite {
     display: none;
 }
@@ -710,6 +715,174 @@ body {
     background: #0c4a8a;
     color: #ffffff;
     box-shadow: 0 8px 18px rgba(12, 74, 138, 0.22);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d5dde7;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #0c4a8a;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(12, 74, 138, 0.1);
+}
+
+.theme-toggle-icon {
+    position: relative;
+    width: 46px;
+    height: 24px;
+    flex: 0 0 46px;
+    border-radius: 999px;
+    background: #dce4ee;
+    transition: background 0.2s ease;
+}
+
+.theme-toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(16, 24, 32, 0.18);
+    transition: transform 0.2s ease;
+}
+
+.hx-dark-mode .theme-toggle {
+    border-color: rgba(184, 221, 255, 0.18);
+    background: #0f2030;
+    color: #b8ddff;
+}
+
+.hx-dark-mode .theme-toggle-icon {
+    background: #0c4a8a;
+}
+
+.hx-dark-mode .theme-toggle-icon::after {
+    transform: translateX(22px);
+}
+
+.hx-dark-mode .screen1,
+.hx-dark-mode .navigation,
+.hx-dark-mode .community-menu {
+    border-color: rgba(184, 221, 255, 0.14);
+    background: #0b1724;
+}
+
+.hx-dark-mode .space-rail {
+    border-color: rgba(184, 221, 255, 0.14);
+    background: #07111b;
+}
+
+.hx-dark-mode .space-rail button,
+.hx-dark-mode .community-brand button,
+.hx-dark-mode .post,
+.hx-dark-mode .reply-body,
+.hx-dark-mode .post-actions button,
+.hx-dark-mode .post-tags a,
+.hx-dark-mode .composer,
+.hx-dark-mode .composer-prompt,
+.hx-dark-mode .profile-page-active .screen2,
+.hx-dark-mode .profile-preview-card,
+.hx-dark-mode .nameplate-preview div,
+.hx-dark-mode .profile-form input,
+.hx-dark-mode .post-msg {
+    border-color: rgba(184, 221, 255, 0.16);
+    background: #0f2030;
+    color: #eaf4ff;
+}
+
+.hx-dark-mode .screen2 {
+    background: #08131f;
+}
+
+.hx-dark-mode .community-brand {
+    border-color: rgba(184, 221, 255, 0.14);
+}
+
+.hx-dark-mode .community-brand h3,
+.hx-dark-mode .post-content h2,
+.hx-dark-mode .post-info h3,
+.hx-dark-mode .profile-topbar h1,
+.hx-dark-mode .profile-preview-card h2,
+.hx-dark-mode .profile-preview-card strong,
+.hx-dark-mode .effect-card p {
+    color: #ffffff;
+}
+
+.hx-dark-mode .navLinks a,
+.hx-dark-mode .navLinks summary,
+.hx-dark-mode .post-info p,
+.hx-dark-mode .post-content p,
+.hx-dark-mode .reply-body p,
+.hx-dark-mode .profile-form label span,
+.hx-dark-mode .profile-effect > span,
+.hx-dark-mode .profile-actions-row > span,
+.hx-dark-mode .nameplate-preview,
+.hx-dark-mode .profile-preview-card p {
+    color: #b8c2ce;
+}
+
+.hx-dark-mode .navLinks a:hover,
+.hx-dark-mode .navLinks summary:hover,
+.hx-dark-mode .rail-toggle,
+.hx-dark-mode .post-badge,
+.hx-dark-mode .effect-card,
+.hx-dark-mode .sendArea-msg {
+    border-color: rgba(184, 221, 255, 0.16);
+    background: #12283d;
+    color: #b8ddff;
+}
+
+.hx-dark-mode .post-actions,
+.hx-dark-mode .preview-divider,
+.hx-dark-mode .sendArea-msg {
+    border-color: rgba(184, 221, 255, 0.12);
+}
+
+.hx-dark-mode .profile-page-active .screen2 {
+    background:
+        radial-gradient(circle at 16% 0, rgba(12, 74, 138, 0.34), transparent 26%),
+        linear-gradient(180deg, #0b1724, #07111b);
+}
+
+.hx-dark-mode .profile-shop-card,
+.hx-dark-mode .preview-banner {
+    background:
+        radial-gradient(circle at 18% 25%, rgba(184, 221, 255, 0.28), transparent 22%),
+        radial-gradient(circle at 70% 10%, rgba(255, 79, 123, 0.22), transparent 24%),
+        linear-gradient(135deg, #06345f, #0c4a8a);
+}
+
+.hx-dark-mode .profile-form input,
+.hx-dark-mode .sendArea-msg input {
+    background: #07111b;
+    color: #eaf4ff;
+}
+
+.hx-dark-mode .fieldArea-msg {
+    background:
+        linear-gradient(rgba(7, 17, 27, 0.34), rgba(7, 17, 27, 0.34)),
+        url("assets/images/bg-img/telegram-bg.jpg") center / cover;
+}
+
+.hx-dark-mode .reciever-msg {
+    background: #0f2030;
+    color: #eaf4ff;
+}
+
+.hx-dark-mode .sender-msg {
+    background: #0c4a8a;
+    color: #ffffff;
 }
 
 .composer {

@@ -88,6 +88,10 @@
                         <button type="button" data-rail-mode="icons" aria-pressed="false">Icons</button>
                         <button type="button" data-rail-mode="ranking" aria-pressed="false">Stars</button>
                     </div>
+                    <button class="theme-toggle" type="button" aria-pressed="false">
+                        <span class="theme-toggle-icon" aria-hidden="true"></span>
+                        <span class="theme-toggle-text">Dark mode</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -730,6 +734,36 @@
 
         </div>
         <script>
+            const themeToggle = document.querySelector(".theme-toggle");
+            const themeToggleText = document.querySelector(".theme-toggle-text");
+            const savedTheme = localStorage.getItem("hender-xender-theme");
+
+            function syncThemeToggle() {
+                const isDarkMode = document.body.classList.contains("hx-dark-mode");
+
+                if (themeToggle) {
+                    themeToggle.setAttribute("aria-pressed", String(isDarkMode));
+                }
+
+                if (themeToggleText) {
+                    themeToggleText.textContent = isDarkMode ? "Light mode" : "Dark mode";
+                }
+            }
+
+            if (savedTheme === "dark") {
+                document.body.classList.add("hx-dark-mode");
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener("click", () => {
+                    const isDarkMode = document.body.classList.toggle("hx-dark-mode");
+                    localStorage.setItem("hender-xender-theme", isDarkMode ? "dark" : "light");
+                    syncThemeToggle();
+                });
+            }
+
+            syncThemeToggle();
+
             const routeLinks = document.querySelectorAll("[data-route-link]");
 
             function getCurrentRoute() {
