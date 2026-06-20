@@ -73,7 +73,8 @@ body.hx-dark-mode {
 }
 
 .profile-editor,
-.profile-preview-panel {
+.profile-preview-panel,
+.route-page {
     display: none;
 }
 
@@ -93,6 +94,17 @@ body.hx-dark-mode {
     display: none;
 }
 
+.route-friends-active .composer,
+.route-friends-active .post-container,
+.route-groups-active .composer,
+.route-groups-active .post-container,
+.route-settings-active .composer,
+.route-settings-active .post-container,
+.route-privacy-active .composer,
+.route-privacy-active .post-container {
+    display: none;
+}
+
 .profile-page-active .profile-editor {
     display: block;
     width: min(100%, 900px);
@@ -109,6 +121,216 @@ body.hx-dark-mode {
 .profile-page-active .profile-main .profile-preview-panel {
     display: grid;
     gap: 12px;
+}
+
+.route-friends-active .route-friends,
+.route-groups-active .route-groups,
+.route-settings-active .route-settings,
+.route-privacy-active .route-privacy {
+    display: grid;
+}
+
+.route-page {
+    gap: 18px;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 6px 0 18px;
+}
+
+.route-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0 6px;
+}
+
+.route-hero span {
+    color: #0c4a8a;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.route-hero h2 {
+    margin-top: 6px;
+    color: #0b2540;
+    font-size: 26px;
+    letter-spacing: -0.04em;
+}
+
+.route-hero button {
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: #0c4a8a;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 12px 20px rgba(12, 74, 138, 0.18);
+}
+
+.route-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0 2px;
+    scrollbar-width: none;
+}
+
+.route-toolbar::-webkit-scrollbar {
+    display: none;
+}
+
+.route-toolbar input {
+    min-width: min(100%, 280px);
+    flex: 1;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #d5e3f2;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #17202a;
+    outline: 0;
+}
+
+.route-toolbar button {
+    flex: 0 0 auto;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #d5e3f2;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #34495e;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.route-card-grid,
+.route-group-grid,
+.settings-stack {
+    display: grid;
+    gap: 14px;
+}
+
+.route-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #dce4ee;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 16px 30px rgba(16, 24, 32, 0.06);
+}
+
+.route-card img {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.route-card strong {
+    color: #0b2540;
+    font-size: 15px;
+}
+
+.route-card p {
+    margin-top: 4px;
+    color: #52616f;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.route-card button,
+.route-card-meta button,
+.settings-row button {
+    border: 0;
+    border-radius: 999px;
+    background: #0c4a8a;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.route-card > button {
+    margin-left: auto;
+    padding: 10px 14px;
+}
+
+.route-group-card {
+    display: grid;
+    align-content: start;
+}
+
+.route-group-card strong {
+    font-size: 16px;
+}
+
+.route-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.route-card-meta span {
+    color: #697887;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.route-card-meta button,
+.settings-row button {
+    padding: 9px 12px;
+}
+
+.settings-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.settings-panel {
+    padding: 18px;
+    border: 1px solid #dce4ee;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 16px 30px rgba(16, 24, 32, 0.06);
+}
+
+.settings-panel strong {
+    color: #0b2540;
+    font-size: 16px;
+}
+
+.settings-panel p {
+    margin-top: 6px;
+    color: #52616f;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #edf2f7;
+}
+
+.settings-row span {
+    color: #34495e;
+    font-size: 13px;
+    font-weight: 800;
 }
 
 .profile-topbar {
@@ -849,6 +1071,29 @@ body.hx-dark-mode {
 .hx-dark-mode .preview-divider,
 .hx-dark-mode .sendArea-msg {
     border-color: rgba(184, 221, 255, 0.12);
+}
+
+.hx-dark-mode .route-hero h2,
+.hx-dark-mode .route-card strong,
+.hx-dark-mode .settings-panel strong {
+    color: #ffffff;
+}
+
+.hx-dark-mode .route-card,
+.hx-dark-mode .settings-panel,
+.hx-dark-mode .route-toolbar input,
+.hx-dark-mode .route-toolbar button {
+    border-color: rgba(184, 221, 255, 0.16);
+    background: #0f2030;
+    color: #eaf4ff;
+}
+
+.hx-dark-mode .route-card p,
+.hx-dark-mode .route-card-meta span,
+.hx-dark-mode .settings-panel p,
+.hx-dark-mode .settings-row span,
+.hx-dark-mode .route-toolbar button {
+    color: #b8c2ce;
 }
 
 .hx-dark-mode .composer-tabs button {

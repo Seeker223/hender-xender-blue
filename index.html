@@ -56,8 +56,8 @@
                                     <summary><svg><use href="#icon-profile"></use></svg> Social</summary>
                                     <ul>
                                         <li><a href="#profile" data-route-link="profile"><span class="menu-icon profile-icon">◉</span> Profile</a></li>
-                                        <li><a href="#"><span class="menu-icon friends-icon">✦</span> Friends</a></li>
-                                        <li><a href="#"><span class="menu-icon groups-icon">◆</span> Groups</a></li>
+                                        <li><a href="#friends" data-route-link="friends"><span class="menu-icon friends-icon">✦</span> Friends</a></li>
+                                        <li><a href="#groups" data-route-link="groups"><span class="menu-icon groups-icon">◆</span> Groups</a></li>
                                     </ul>
                                 </details>
                             </li>
@@ -75,8 +75,8 @@
                                 <details>
                                     <summary><svg><use href="#icon-settings"></use></svg> Account</summary>
                                     <ul>
-                                        <li><a href="#"><span class="menu-icon settings-icon">⚙</span> Settings</a></li>
-                                        <li><a href="#"><span class="menu-icon privacy-icon">◒</span> Privacy</a></li>
+                                        <li><a href="#settings" data-route-link="settings"><span class="menu-icon settings-icon">⚙</span> Settings</a></li>
+                                        <li><a href="#privacy" data-route-link="privacy"><span class="menu-icon privacy-icon">◒</span> Privacy</a></li>
                                         <li><a href="#"><span class="menu-icon star-icon">✦</span> Star level</a></li>
                                     </ul>
                                 </details>
@@ -170,6 +170,126 @@
                     </aside>
                 </div>
             </div>
+            <section class="route-page route-friends">
+                <div class="route-hero">
+                    <div>
+                        <span>Friends</span>
+                        <h2>Your people, neatly organized</h2>
+                    </div>
+                    <button type="button">Invite</button>
+                </div>
+                <div class="route-toolbar">
+                    <input type="search" placeholder="Search friends">
+                    <button type="button">All friends</button>
+                    <button type="button">Online</button>
+                    <button type="button">Recent</button>
+                </div>
+                <div class="route-card-grid">
+                    <article class="route-card">
+                        <img src="assets/945404146813519747.jfif" alt="">
+                        <div>
+                            <strong>Mira Lane</strong>
+                            <p>Creative partner and launch reviewer.</p>
+                        </div>
+                        <button type="button">Message</button>
+                    </article>
+                    <article class="route-card">
+                        <img src="assets/945404146813519747.jfif" alt="">
+                        <div>
+                            <strong>Deon Vale</strong>
+                            <p>Motion pack collaborator.</p>
+                        </div>
+                        <button type="button">Message</button>
+                    </article>
+                    <article class="route-card">
+                        <img src="assets/945404146813519747.jfif" alt="">
+                        <div>
+                            <strong>Aria Stone</strong>
+                            <p>Profile and story system reviewer.</p>
+                        </div>
+                        <button type="button">Message</button>
+                    </article>
+                </div>
+            </section>
+            <section class="route-page route-groups">
+                <div class="route-hero">
+                    <div>
+                        <span>Groups</span>
+                        <h2>Premium communities and channels</h2>
+                    </div>
+                    <button type="button">Create group</button>
+                </div>
+                <div class="route-toolbar">
+                    <input type="search" placeholder="Search groups">
+                    <button type="button">All</button>
+                    <button type="button">Design</button>
+                    <button type="button">Launch</button>
+                    <button type="button">Private</button>
+                </div>
+                <div class="route-card-grid route-group-grid">
+                    <article class="route-card route-group-card">
+                        <strong>Hender Blue Lounge</strong>
+                        <p>Exclusive product drops, profile feedback, and creator support.</p>
+                        <div class="route-card-meta"><span>4.8k members</span><button type="button">Join</button></div>
+                    </article>
+                    <article class="route-card route-group-card">
+                        <strong>Motion Pack Lab</strong>
+                        <p>Short-form video concepts and launch sequences.</p>
+                        <div class="route-card-meta"><span>1.2k members</span><button type="button">Join</button></div>
+                    </article>
+                    <article class="route-card route-group-card">
+                        <strong>Brand Identity Stack</strong>
+                        <p>Logos, palettes, and profile branding discussions.</p>
+                        <div class="route-card-meta"><span>980 members</span><button type="button">Join</button></div>
+                    </article>
+                </div>
+            </section>
+            <section class="route-page route-settings">
+                <div class="route-hero">
+                    <div>
+                        <span>Settings</span>
+                        <h2>Account and app preferences</h2>
+                    </div>
+                    <button type="button">Save</button>
+                </div>
+                <div class="settings-stack">
+                    <article class="settings-panel">
+                        <strong>Appearance</strong>
+                        <p>Control theme, brand accents, and interface density.</p>
+                        <div class="settings-row"><span>Dark mode</span><button type="button">On</button></div>
+                        <div class="settings-row"><span>Brand blue</span><button type="button">Edit</button></div>
+                    </article>
+                    <article class="settings-panel">
+                        <strong>Notifications</strong>
+                        <p>Manage alerts for messages, mentions, and story reactions.</p>
+                        <div class="settings-row"><span>Push alerts</span><button type="button">Enabled</button></div>
+                        <div class="settings-row"><span>Email digest</span><button type="button">Daily</button></div>
+                    </article>
+                </div>
+            </section>
+            <section class="route-page route-privacy">
+                <div class="route-hero">
+                    <div>
+                        <span>Privacy</span>
+                        <h2>Who can see your presence</h2>
+                    </div>
+                    <button type="button">Review</button>
+                </div>
+                <div class="settings-stack">
+                    <article class="settings-panel">
+                        <strong>Visibility</strong>
+                        <p>Choose who can view your status, profile, and story activity.</p>
+                        <div class="settings-row"><span>Status visibility</span><button type="button">Friends</button></div>
+                        <div class="settings-row"><span>Profile visibility</span><button type="button">Everyone</button></div>
+                    </article>
+                    <article class="settings-panel">
+                        <strong>Safety</strong>
+                        <p>Block, mute, and control message permissions.</p>
+                        <div class="settings-row"><span>Message requests</span><button type="button">Filtered</button></div>
+                        <div class="settings-row"><span>Blocked users</span><button type="button">Manage</button></div>
+                    </article>
+                </div>
+            </section>
             <div class="composer">
                 <img src="assets/945404146813519747.jfif" alt="">
                 <button class="composer-prompt" type="button">What's on your mind, Sambad?</button>
@@ -747,6 +867,7 @@
             const themeToggle = document.querySelector(".theme-toggle");
             const themeToggleText = document.querySelector(".theme-toggle-text");
             const savedTheme = localStorage.getItem("hender-xender-theme");
+            const supportedRoutes = ["home", "profile", "friends", "groups", "settings", "privacy"];
 
             function syncThemeToggle() {
                 const isDarkMode = document.body.classList.contains("hx-dark-mode");
@@ -778,13 +899,25 @@
 
             function getCurrentRoute() {
                 const route = window.location.hash.replace("#", "");
-                return route === "profile" ? "profile" : "home";
+                return supportedRoutes.includes(route) ? route : "home";
             }
 
             function syncRouteView() {
                 const currentRoute = getCurrentRoute();
 
+                document.body.classList.remove(
+                    "profile-page-active",
+                    "route-friends-active",
+                    "route-groups-active",
+                    "route-settings-active",
+                    "route-privacy-active"
+                );
+
                 document.body.classList.toggle("profile-page-active", currentRoute === "profile");
+                document.body.classList.toggle("route-friends-active", currentRoute === "friends");
+                document.body.classList.toggle("route-groups-active", currentRoute === "groups");
+                document.body.classList.toggle("route-settings-active", currentRoute === "settings");
+                document.body.classList.toggle("route-privacy-active", currentRoute === "privacy");
 
                 routeLinks.forEach((link) => {
                     const isActive = link.dataset.routeLink === currentRoute;
