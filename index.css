@@ -627,6 +627,168 @@ body.hx-dark-mode {
     object-fit: cover;
 }
 
+.star-progress-card {
+    display: grid;
+    gap: 10px;
+    padding: 16px;
+    border: 1px solid #dce4ee;
+    border-radius: 14px;
+    background: #0f141a;
+    box-shadow: 0 14px 24px rgba(16, 24, 32, 0.1);
+}
+
+.star-progress-hero {
+  display: flex;
+  align-items: center;
+    gap: 12px;
+}
+
+.star-hero-badge {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffd84d;
+    color: #101820;
+    font-size: 28px;
+    box-shadow: 0 8px 18px rgba(255, 216, 77, 0.18);
+}
+
+.star-progress-hero strong {
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.star-progress-hero p {
+    margin-top: 4px;
+    color: #aab4bf;
+    font-size: 12px;
+}
+
+.star-progress-block {
+    display: grid;
+    gap: 8px;
+}
+
+.star-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.star-progress-header span,
+.star-progress-label,
+.star-level-title {
+    color: #ffd84d;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.star-progress-header strong {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.star-progress-bar {
+    height: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: #1b2430;
+}
+
+.star-progress-bar span {
+    display: block;
+    width: 73.9%;
+    height: 100%;
+    border-radius: inherit;
+    background: #b8ddff;
+}
+
+.star-progress-note,
+.star-progress-block p {
+    color: #aab4bf;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.star-progress-tip {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.star-progress-tip span {
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #1b2430;
+    color: #b8ddff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.star-level-list {
+    display: grid;
+    gap: 6px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.star-level-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    background: #151b22;
+}
+
+.star-level-item span {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border-radius: 50%;
+    color: currentColor;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.star-level-item em {
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.hx-dark-mode .star-progress-card,
+.hx-dark-mode .star-level-item {
+    border-color: rgba(184, 221, 255, 0.08);
+    background: #0f141a;
+}
+
+.hx-dark-mode .star-progress-hero strong,
+.hx-dark-mode .star-progress-header strong,
+.hx-dark-mode .star-level-item em {
+    color: #ffffff;
+}
+
+.hx-dark-mode .star-progress-hero p,
+.hx-dark-mode .star-progress-note,
+.hx-dark-mode .star-progress-block p {
+    color: #b8c2ce;
+}
+
+.hx-dark-mode .star-progress-bar {
+    border-color: rgba(184, 221, 255, 0.08);
+    background: #1b2430;
+}
+
 .navigation {
     display: grid;
     grid-template-columns: 64px minmax(0, 1fr);
