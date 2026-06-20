@@ -791,6 +791,7 @@ body.hx-dark-mode {
 .hx-dark-mode .post-tags a,
 .hx-dark-mode .composer,
 .hx-dark-mode .composer-prompt,
+.hx-dark-mode .composer-tabs,
 .hx-dark-mode .profile-page-active .screen2,
 .hx-dark-mode .profile-preview-card,
 .hx-dark-mode .nameplate-preview div,
@@ -835,6 +836,7 @@ body.hx-dark-mode {
 .hx-dark-mode .navLinks a:hover,
 .hx-dark-mode .navLinks summary:hover,
 .hx-dark-mode .rail-toggle,
+.hx-dark-mode .composer-tabs,
 .hx-dark-mode .post-badge,
 .hx-dark-mode .effect-card,
 .hx-dark-mode .sendArea-msg {
@@ -847,6 +849,14 @@ body.hx-dark-mode {
 .hx-dark-mode .preview-divider,
 .hx-dark-mode .sendArea-msg {
     border-color: rgba(184, 221, 255, 0.12);
+}
+
+.hx-dark-mode .composer-tabs button {
+    color: #b8c2ce;
+}
+
+.hx-dark-mode .composer-tabs button.active {
+    color: #ffffff;
 }
 
 .hx-dark-mode .profile-page-active .screen2 {
@@ -894,6 +904,58 @@ body.hx-dark-mode {
     border-radius: 12px;
     background: #222326;
     box-shadow: 0 12px 24px rgba(16, 24, 32, 0.16);
+}
+
+.composer-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 16px 0;
+    padding: 10px 12px;
+    overflow-x: auto;
+    border: 1px solid #dce4ee;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(16, 24, 32, 0.06);
+    scrollbar-width: none;
+}
+
+.composer-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.composer-tabs button {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #52616f;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.composer-tabs button.active {
+    background: #0c4a8a;
+    color: #ffffff;
+    box-shadow: 0 10px 18px rgba(12, 74, 138, 0.18);
+}
+
+.composer-tabs button:hover {
+    background: #e7f1ff;
+    color: #0c4a8a;
+}
+
+.composer-tabs-more {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 26px;
+    line-height: 1;
+    color: #0c4a8a;
 }
 
 .composer img {
