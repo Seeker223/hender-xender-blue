@@ -1800,6 +1800,18 @@ body.hx-dark-mode {
     justify-content: center;
     border-radius: 50%;
     background: conic-gradient(#0c4a8a 0 14%, #b8ddff 14% 18%, #0c4a8a 18% 31%, #b8ddff 31% 35%, #0c4a8a 35% 49%, #b8ddff 49% 53%, #0c4a8a 53% 66%, #b8ddff 66% 70%, #0c4a8a 70% 84%, #b8ddff 84% 88%, #0c4a8a 88% 100%);
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.avatar-status:hover,
+.avatar-status.is-active-story {
+    filter: drop-shadow(0 8px 16px rgba(12, 74, 138, 0.24));
+    transform: translateY(-1px) scale(1.04);
+}
+
+.avatar-status.is-active-story {
+    background: conic-gradient(#ffffff 0 8%, #0c4a8a 8% 42%, #b8ddff 42% 50%, #0c4a8a 50% 84%, #ffffff 84% 100%);
 }
 
 .circle .avatar-status {
@@ -2001,6 +2013,67 @@ body.hx-dark-mode {
 
 .video-status-lines .is-filled {
     background: linear-gradient(90deg, #0c4a8a, #b8ddff);
+}
+
+.story-person {
+    position: absolute;
+    top: 24px;
+    right: 12px;
+    left: 12px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.52), rgba(12, 74, 138, 0.34));
+    color: #ffffff;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-person img {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.story-person-copy {
+    display: grid;
+    flex: 1;
+    min-width: 0;
+}
+
+.story-person-copy strong,
+.story-person-copy span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.story-person-copy strong {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.story-person-copy span {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.story-person-badge {
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: rgba(184, 221, 255, 0.18);
+    color: #b8ddff;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 video {

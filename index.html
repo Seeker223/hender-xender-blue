@@ -884,6 +884,138 @@
 
                 setActiveThumbnail(activeIndex);
             });
+
+            const storyPeople = [
+                {
+                    name: "Mira Lane",
+                    meta: "Blue Access status - 2 min ago",
+                    badge: "Premium",
+                    caption: "This blue drop feels cinematic."
+                },
+                {
+                    name: "Deon Vale",
+                    meta: "Archive reveal - 8 min ago",
+                    badge: "Creator",
+                    caption: "The reveal frame is clean."
+                },
+                {
+                    name: "Aria Stone",
+                    meta: "Motion pack - 12 min ago",
+                    badge: "Featured",
+                    caption: "Pinned profile energy."
+                },
+                {
+                    name: "Kai Rivers",
+                    meta: "Launch sequence - 18 min ago",
+                    badge: "VIP",
+                    caption: "Premium reel energy."
+                },
+                {
+                    name: "Nia Crest",
+                    meta: "Glow story - 22 min ago",
+                    badge: "Glow",
+                    caption: "The glow makes it feel expensive."
+                },
+                {
+                    name: "Tomi Blue",
+                    meta: "Final shot - 30 min ago",
+                    badge: "HX",
+                    caption: "Hender Xender went premium."
+                }
+            ];
+
+            const storyAvatars = document.querySelectorAll(".screen3 .avatar-status");
+            const storyVideos = document.querySelectorAll(".screen3 .vid");
+
+            function ensureStoryPerson(videoShell) {
+                let storyPerson = videoShell.querySelector(".story-person");
+
+                if (!storyPerson) {
+                    storyPerson = document.createElement("div");
+                    storyPerson.className = "story-person";
+                    storyPerson.innerHTML = `
+                        <img src="" alt="">
+                        <div class="story-person-copy">
+                            <strong></strong>
+                            <span></span>
+                        </div>
+                        <span class="story-person-badge"></span>
+                    `;
+                    videoShell.insertBefore(storyPerson, videoShell.querySelector("video"));
+                }
+
+                return storyPerson;
+            }
+
+            function personalizeStory(index) {
+                const person = storyPeople[index % storyPeople.length];
+                const matchingAvatars = Array.from(storyAvatars).filter((avatar, avatarIndex) => avatarIndex % storyPeople.length === index % storyPeople.length);
+
+                storyAvatars.forEach((avatar) => avatar.classList.remove("is-active-story"));
+                matchingAvatars.forEach((avatar) => avatar.classList.add("is-active-story"));
+
+                storyVideos.forEach((videoShell, videoIndex) => {
+                    const storyPerson = ensureStoryPerson(videoShell);
+                    const avatarImage = matchingAvatars[0]?.querySelector("img") || storyAvatars[0]?.querySelector("img");
+                    const storyImage = storyPerson.querySelector("img");
+                    const storyName = storyPerson.querySelector("strong");
+                    const storyMeta = storyPerson.querySelector(".story-person-copy span");
+                    const storyBadge = storyPerson.querySelector(".story-person-badge");
+                    const firstComment = videoShell.querySelector(".story-comments p:first-child");
+                    const statusLines = videoShell.querySelectorAll(".video-status-lines span");
+
+                    if (storyImage && avatarImage) {
+                        storyImage.src = avatarImage.src;
+                        storyImage.alt = `${person.name} status`;
+                    }
+
+                    if (storyName) {
+                        storyName.textContent = person.name;
+                    }
+
+                    if (storyMeta) {
+                        storyMeta.textContent = `${person.meta} - Part ${videoIndex + 1}/${storyVideos.length}`;
+                    }
+
+                    if (storyBadge) {
+                        storyBadge.textContent = person.badge;
+                    }
+
+                    if (firstComment) {
+                        firstComment.innerHTML = `<strong>${person.name.split(" ")[0]}</strong> ${person.caption}`;
+                    }
+
+                    statusLines.forEach((line, lineIndex) => {
+                        line.classList.toggle("is-filled", lineIndex <= videoIndex);
+                    });
+                });
+
+                const firstVideo = document.querySelector(".screen3 .vid");
+
+                if (firstVideo) {
+                    firstVideo.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }
+            }
+
+            storyAvatars.forEach((avatar, index) => {
+                const person = storyPeople[index % storyPeople.length];
+
+                avatar.setAttribute("role", "button");
+                avatar.setAttribute("tabindex", "0");
+                avatar.setAttribute("aria-label", `View ${person.name} status`);
+
+                avatar.addEventListener("click", () => personalizeStory(index));
+                avatar.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        personalizeStory(index);
+                    }
+                });
+            });
+
+            if (storyAvatars.length && storyVideos.length) {
+                personalizeStory(0);
+            }
         </script>
 </body>
 </html>
